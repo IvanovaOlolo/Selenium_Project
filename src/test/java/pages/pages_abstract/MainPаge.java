@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import pages.BrowseLanguageABSPage;
 import pages.SearchLanguagesPage;
 import pages.guestbook.GuestbookPage;
+import pages.top_lists.TopRatedPage;
 
 import java.util.List;
 
@@ -20,6 +21,9 @@ public abstract class MainPаge extends BasePage {
 
     @FindBy(xpath = "//div[@id='navigation']//a[@href='/guestbookv2.html']")
     private WebElement guestbookMenu;
+
+    @FindBy(xpath = "//div[@id='navigation']//a[@href='/toplist.html']")
+    private WebElement topListsMenu;
 
     @FindBy(xpath = "//ul[@id='menu']//li")
     private List<WebElement> menuLinks;
@@ -56,6 +60,10 @@ public abstract class MainPаge extends BasePage {
     public GuestbookPage clickGuestbookMenu(){
         click(guestbookMenu);
         return new GuestbookPage(getDriver());
+    }
+    public TopRatedPage clickTopListsMenu(){
+        click(topListsMenu);
+        return new TopRatedPage(getDriver());
     }
 
     public int getMenuLinksAmount(){
