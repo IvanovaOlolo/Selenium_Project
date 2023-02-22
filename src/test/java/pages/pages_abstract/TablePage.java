@@ -21,4 +21,5 @@ public abstract class TablePage extends MainPаge {
         return getListTextInLowerCase_POM3(languagesNameList);
     }
 
+
 }
